@@ -1,0 +1,23 @@
+project:
+  title: "mth401-s26"
+
+editor: visual
+
+format:
+  html:
+    theme: 
+      - cosmo
+    css: style/mth401.scss
+    toc: true
+    number-sections: true
+    number-depth: 2
+    reference-location: margin
+    # backgroundcolor: "#FFFDE1"
+    backgroundcolor: "#F0FFDF"
+    
+  pdf:
+    toc: true
+    number-sections: true
+    number-depth: 2
+    colorlinks: true
+    reference-location: block

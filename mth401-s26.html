@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MTH 401 – Real Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="mth401-s26_files/libs/clipboard/clipboard.min.js"></script>
+<script src="mth401-s26_files/libs/quarto-html/quarto.js"></script>
+<script src="mth401-s26_files/libs/quarto-html/popper.min.js"></script>
+<script src="mth401-s26_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="mth401-s26_files/libs/quarto-html/anchor.min.js"></script>
+<link href="mth401-s26_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="mth401-s26_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="mth401-s26_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="mth401-s26_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="mth401-s26_files/libs/bootstrap/bootstrap-28ef94f2c7038feef1c98e3e3112e779.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style/mth401.scss">
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!</a></li>
+  <li><a href="#general-information" id="toc-general-information" class="nav-link" data-scroll-target="#general-information"><span class="header-section-number">1</span> General Information</a>
+  <ul class="collapse">
+  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description"><span class="header-section-number">1.1</span> Course Description</a>
+  <ul class="collapse">
+  <li><a href="#inquiry-based-learning" id="toc-inquiry-based-learning" class="nav-link" data-scroll-target="#inquiry-based-learning">Inquiry Based Learning</a></li>
+  </ul></li>
+  <li><a href="#course-materials" id="toc-course-materials" class="nav-link" data-scroll-target="#course-materials"><span class="header-section-number">1.2</span> Course Materials</a></li>
+  <li><a href="#attendance" id="toc-attendance" class="nav-link" data-scroll-target="#attendance"><span class="header-section-number">1.3</span> Attendance</a></li>
+  <li><a href="#ai-policy" id="toc-ai-policy" class="nav-link" data-scroll-target="#ai-policy"><span class="header-section-number">1.4</span> AI Policy</a>
+  <ul class="collapse">
+  <li><a href="#additional-reading" id="toc-additional-reading" class="nav-link" data-scroll-target="#additional-reading">Additional Reading</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#student-support" id="toc-student-support" class="nav-link" data-scroll-target="#student-support"><span class="header-section-number">2</span> Student Support</a>
+  <ul class="collapse">
+  <li><a href="#drop-in-hours" id="toc-drop-in-hours" class="nav-link" data-scroll-target="#drop-in-hours"><span class="header-section-number">2.1</span> Drop-In Hours</a></li>
+  <li><a href="#sign-up-hours" id="toc-sign-up-hours" class="nav-link" data-scroll-target="#sign-up-hours"><span class="header-section-number">2.2</span> Sign-Up Hours</a></li>
+  <li><a href="#open-door" id="toc-open-door" class="nav-link" data-scroll-target="#open-door"><span class="header-section-number">2.3</span> Open Door</a></li>
+  </ul></li>
+  <li><a href="#course-structure" id="toc-course-structure" class="nav-link" data-scroll-target="#course-structure"><span class="header-section-number">3</span> Course Structure</a>
+  <ul class="collapse">
+  <li><a href="#daily-tasks" id="toc-daily-tasks" class="nav-link" data-scroll-target="#daily-tasks"><span class="header-section-number">3.1</span> Daily Tasks</a></li>
+  <li><a href="#written-homework" id="toc-written-homework" class="nav-link" data-scroll-target="#written-homework"><span class="header-section-number">3.2</span> Written Homework</a>
+  <ul class="collapse">
+  <li><a href="#due-dates-and-late-work" id="toc-due-dates-and-late-work" class="nav-link" data-scroll-target="#due-dates-and-late-work">Due Dates and Late Work</a></li>
+  </ul></li>
+  <li><a href="#quizzes" id="toc-quizzes" class="nav-link" data-scroll-target="#quizzes"><span class="header-section-number">3.3</span> Quizzes</a></li>
+  <li><a href="#proof-portfolio" id="toc-proof-portfolio" class="nav-link" data-scroll-target="#proof-portfolio"><span class="header-section-number">3.4</span> Proof Portfolio</a></li>
+  <li><a href="#finals-week" id="toc-finals-week" class="nav-link" data-scroll-target="#finals-week"><span class="header-section-number">3.5</span> Finals Week</a></li>
+  </ul></li>
+  <li><a href="#grades" id="toc-grades" class="nav-link" data-scroll-target="#grades"><span class="header-section-number">4</span> Grades</a>
+  <ul class="collapse">
+  <li><a href="#collaborative-grading" id="toc-collaborative-grading" class="nav-link" data-scroll-target="#collaborative-grading">Collaborative Grading</a></li>
+  <li><a href="#qualitative-descriptions-of-grades" id="toc-qualitative-descriptions-of-grades" class="nav-link" data-scroll-target="#qualitative-descriptions-of-grades">Qualitative Descriptions of Grades</a></li>
+  <li><a href="#engagement" id="toc-engagement" class="nav-link" data-scroll-target="#engagement">Engagement</a></li>
+  <li><a href="#partial-grades" id="toc-partial-grades" class="nav-link" data-scroll-target="#partial-grades">Partial Grades</a></li>
+  </ul></li>
+  <li><a href="#university-policies-resources" id="toc-university-policies-resources" class="nav-link" data-scroll-target="#university-policies-resources"><span class="header-section-number">5</span> University Policies &amp; Resources</a>
+  <ul class="collapse">
+  <li><a href="#code-of-academic-integrity" id="toc-code-of-academic-integrity" class="nav-link" data-scroll-target="#code-of-academic-integrity"><span class="header-section-number">5.1</span> Code of Academic Integrity</a></li>
+  <li><a href="#assessment-disclosure" id="toc-assessment-disclosure" class="nav-link" data-scroll-target="#assessment-disclosure"><span class="header-section-number">5.2</span> Assessment Disclosure</a></li>
+  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility"><span class="header-section-number">5.3</span> Accessibility</a></li>
+  <li><a href="#mental-health" id="toc-mental-health" class="nav-link" data-scroll-target="#mental-health"><span class="header-section-number">5.4</span> Mental Health</a></li>
+  <li><a href="#non-violence" id="toc-non-violence" class="nav-link" data-scroll-target="#non-violence"><span class="header-section-number">5.5</span> Non-Violence</a></li>
+  <li><a href="#ethics-of-information" id="toc-ethics-of-information" class="nav-link" data-scroll-target="#ethics-of-information"><span class="header-section-number">5.6</span> Ethics of Information</a></li>
+  <li><a href="#final-exam-policy" id="toc-final-exam-policy" class="nav-link" data-scroll-target="#final-exam-policy"><span class="header-section-number">5.7</span> Final Exam Policy</a></li>
+  <li><a href="#the-learning-commons" id="toc-the-learning-commons" class="nav-link" data-scroll-target="#the-learning-commons"><span class="header-section-number">5.8</span> The Learning Commons</a></li>
+  <li><a href="#withdrawal-procedures" id="toc-withdrawal-procedures" class="nav-link" data-scroll-target="#withdrawal-procedures"><span class="header-section-number">5.9</span> Withdrawal Procedures</a></li>
+  <li><a href="#incompletes" id="toc-incompletes" class="nav-link" data-scroll-target="#incompletes"><span class="header-section-number">5.10</span> Incompletes</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="mth401-s26.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">MTH 401 – Real Analysis</h1>
+<p class="subtitle lead">Spring 2026, University of Portland</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+.flushright {
+   text-align: right;
+}
+</style>
+<section id="welcome" class="level1 unnumbered">
+<h1 class="unnumbered">Welcome!</h1>
+<p>Before we get into the details of the course, I want to share with you a few thoughts about my general approach to teaching and learning. My main goal as the professor in this course is to help you succeed in not just learning the material but in growing as a learner. Learning takes effort, a willingness to try something that may not work, and the ability to use feedback to refine your understanding. My job is to foster an environment in which each and every one of you are supported in these aspects.</p>
+<p>Much of the work for this course will be done within class or small group discussions for which we will rely on everyone in this class as a source for feedback and support. Because of this, it’s important that we create an inclusive community that is respectful of our differences and offers space for the boundary-setting necessary for positive relationships to form. Our diversity is reflected by differences in race, gender, sexuality, ability, class, religion, nationality, and other cultural identities and material circumstances.</p>
+</section>
+<section id="general-information" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> General Information</h1>
+<ul>
+<li><strong>Instructor:</strong> Chris Hallstrom, PhD (he / him / his).</li>
+<li><strong>Office:</strong> Buckley Center 270</li>
+<li><strong>Email:</strong> <a href="mailto:hallstro@up.edu">hallstro@up.edu</a>.</li>
+<li><strong>Webpage:</strong> All course content will be posted on <a href="https://learning.up.edu">Moodle</a></li>
+<li>Dr.&nbsp;Hallstrom’s <a href="https://calendly.com/hallstro">Calendly link</a>.</li>
+</ul>
+<section id="course-description" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="course-description"><span class="header-section-number">1.1</span> Course Description</h2>
+<p>In this course, we will revisit the fundamental concepts and results from Calculus with the goal of understanding better how the basic theorems and results follow from foundational definitions and axioms. We will consider the question of how we can make these concepts and arguments precise as well as how we can communicate mathematical ideas clearly. Specific topics will include the axioms for a complete ordered field, the formal defintion of the limit, continuity for both sequences and functions, and the derivative. We will investigate and prove various properties and consequences that follow from these topics.</p>
+<p>In addition to content learning, we will also focus on the task of communication of rigorous mathematical argument. By the end of the semester, you should be able to</p>
+<ul>
+<li>effectively communicate mathematical ideas orally using correct terminology and language</li>
+<li>develop and write correct and complete mathematical proofs using the standards and conventions of the discipline.</li>
+</ul>
+<section id="inquiry-based-learning" class="level3">
+<h3 class="anchored" data-anchor-id="inquiry-based-learning">Inquiry Based Learning</h3>
+<p>We will use a method of instruction often called Inquiry Based Learning (IBL) which is designed to engage and foster skills and habits that working mathematicians use regularly; you will be asked to solve problems, make conjectures, experiment, explore, create, collaborate, and communicate your work with your peers. Rather than giving you facts to memorize or showing you clear paths to solutions, my role is to guide you via a sequence of carefully chosen problems through a journey of mathematical discovery.</p>
+<p>Throughout the semester, you will receive a list of definitions to interpret and make sense of, as well as exercises and theorems which you and your classmates will answer or prove. There will be very little traditional lecture. Instead, class time will consist of student presentations of new material. For best results, you should come to class prepared to share your work or ideas about that day’s problems. This method of inquiry does not work nearly as well if you’re looking at problem for the first time in-class.</p>
+<p>You will be asked to share your solutions and explain your thinking in class regularly. You will be asked to generate examples and counterexamples, to make conjectures, and to prove or disprove these conjectures. When observing other student presentations, it is your responsibility to follow their argument closely and decide if their explanations are reasonable. If you cannot follow their logic, or have questions about their solution, it is your responsibility to ask!</p>
+<p>A key feature of our IBL method is student <strong>discovery</strong> and therefore <strong>outside resources are not allowed</strong>. This means that you should not consult any texts (other than the notes handed out in class), the internet, students not currently enrolled in the course, or faculty other than myself. Consulting outside resources will deprive you of opportunities to engage with the material. You are encouraged to work with your classmates on the problems, although every student must write up and submit their <em>own</em> solutions to written work. <strong>You can always ask me for help if you’re stuck on a problem.</strong></p>
+</section>
+</section>
+<section id="course-materials" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="course-materials"><span class="header-section-number">1.2</span> Course Materials</h2>
+<p>We will use a set of course notes that I will provide. Both hard copies and electronic versions will be available. No other materials are needed.</p>
+</section>
+<section id="attendance" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="attendance"><span class="header-section-number">1.3</span> Attendance</h2>
+<p>Since we will be doing much of our learning through collaborative in-class activities, it’s important that you come to class regularly, prepared to engage and participate. Everyone’s contributions are valued!</p>
+<p>That said, I also recognize that for many reasons, this is not always be possible. If you do need to miss class <strong>for any reason</strong> just let me know – there is no penalty apart from missing out on that day’s activity. If you miss class often, you can expect me to reach out to see how I can support you coming to class.</p>
+<p>I will do my best to post on Moodle a short summary of what we do in class, so if you do miss class, you should look there to see what we did that day. You may also find it helpful if you’re able to check-in with a classmate to see what we covered. Finally, I’m always available in office hours to discuss anything you missed.</p>
+<p><a href="https://www.loc.gov/programs/poetry-and-literature/poet-laureate/poet-laureate-projects/poetry-180/all-poems/item/poetry-180-013/did-i-miss-anything/" class="external" target="_blank">Poem 013: Did I Miss Anything? by Tom Wyman</a></p>
+</section>
+<section id="ai-policy" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="ai-policy"><span class="header-section-number">1.4</span> AI Policy</h2>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Using AI in this class fundamentally undermines our learning goals and <strong>should not be used in any way</strong>.</p>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Here’s the thing – your goal in this class is <strong>not</strong> to perform calculations, to work through examples, or even to get the right answer. Yes, we will do those things but they’re all in service of the <strong>actual goal</strong> which is to <strong>think</strong> and to <strong>communicate</strong> mathematically.</p>
+<p>Struggling to build your own understanding and to make sense of difficult concepts is precisely the point. Using Gen AI to do these tasks for you is to give up those opportunities to learn. Don’t undermine your growth as a human learner by looking for shortcuts!</p>
+<p>My role is to help guide your thinking and to help you think more like an expert and to do that I need to see and hear <em>your</em> thinking. If you use AI to do the work in this class:</p>
+<ul>
+<li>you haven’t done your job because you haven’t produced a record of your own thinking;</li>
+<li>I can’t do my job because I don’t have access to your thinking. Worse than that, you are essentially asking me to read and respond to something that you didn’t write, which is profoundly disrespectful of my time and energy.</li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:50%;">
+<p><img src="./images/sousanis.jpg" class="img-fluid"></p>
+</div>
+</div>
+<p>Bottom line: I do not see any practical, helpful, or ethical way to use Gen AI and LLMs to assist you in achieving this goal.</p>
+<p>While I’m not interested in being an AI cop, you should be clear about how this policy will be enforced</p>
+<ul>
+<li>If I have any concerns or questions about whether a submission represents your own work, I reserve the right to ask you to meet with me so you can explain your thinking before I give feedback.</li>
+<li>Any submission that’s not a record of your own thinking will be considered a violation of <a href="https://up.smartcatalogiq.com/en/2022-2023/bulletin/university-academic-regulations/i-code-of-academic-integrity/guidelines-for-implementation-of-the-universitys-code-of-academic-integrity">UP’s Academic Integrity policy</a> and will be handled accordingly.</li>
+</ul>
+<p>It goes without saying that this AI policy applies to this course and your other courses may have different policies.</p>
+<section id="additional-reading" class="level3">
+<h3 class="anchored" data-anchor-id="additional-reading">Additional Reading</h3>
+<p>If you would like to understand more about how I came to this position on AI in the classroom, here are a few articles that might interest you.</p>
+<ul>
+<li><p><a href="https://emergingethics.substack.com/p/why-were-not-using-ai-in-this-course">Why We’re Not Using AI in This Course, Despite It’s Obvious Benefits</a> by Patrick Lin.</p></li>
+<li><p><a href="https://anthonymoser.github.io/writing/ai/haterdom/2025/08/26/i-am-an-ai-hater.html">I Am An AI Hater</a> by Anthony Moser. A succinct summary of the many (many) ethical issues around AI tools.</p></li>
+<li><p><a href="https://thebullshitmachines.com/">Bullshit Machines</a> is a good explainer on how LMMs work.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="student-support" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Student Support</h1>
+<p>Research suggests that our best learning happens when we work in a zone of <em>productive discomfort</em>, meaning that we feel challenged and a bit outside of our comfort zone. This means that as you’re working through the material - whether completing homework tasks or reviewing class notes - <strong>you should have questions</strong>. While much of our in-class time will be spent trying to address those questions, there may not always be enough time to get all your questions answered during class; or you might not want to wait until class to address your questions. At the same time, it’s important that you do not feel completely stuck (at least for too long). For these reasons, it’s extremely important to me that you have resources to support your learning outside of class.</p>
+<section id="drop-in-hours" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="drop-in-hours"><span class="header-section-number">2.1</span> Drop-In Hours</h2>
+<p>I will post on Moodle several blocks of time during the week that I am available for drop-in help. You do not need to let me know you’re coming – just stop by my office (BC 270). Many students find these drop-in hours can be particularly helpful if you are working together with classmates. You can work together at one of the tables down the hall from my office and just pop in when you have any questions.</p>
+</section>
+<section id="sign-up-hours" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sign-up-hours"><span class="header-section-number">2.2</span> Sign-Up Hours</h2>
+<p>While I will do my best to provide multiple options for drop-in hours, I recognize that these times might not work well with everyone’s schedule. Or you simply might find it more convenient to meet with me at a different time. If you go to my <a href="https://calendly.com/hallstro">Calendly scheduler</a>, you can sign-up for a time slot to meet. If there is a specific time that works for you and you don’t see it available on the Calendly scheduler, please reach out to me via email and we will find a time that works for your schedule.</p>
+</section>
+<section id="open-door" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="open-door"><span class="header-section-number">2.3</span> Open Door</h2>
+<p>I have the scheduled drop-in hours simply to give you some times when you know that I’ll be available – but you are <strong>always</strong> welcome to stop by my office <strong>at any time</strong>. Unless I’m in class or in a meeting, I will generally be available to meet with you.</p>
+</section>
+</section>
+<section id="course-structure" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Course Structure</h1>
+<section id="daily-tasks" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="daily-tasks"><span class="header-section-number">3.1</span> Daily Tasks</h2>
+<p>Your standing assignment in this course is to work through and prepare complete solutions or proofs for all of the problems in the class notes. You should come to class prepared to present and discuss your ideas, both in small groups and as a whole class. If you get stuck on a problem, come prepared to ask questions.</p>
+<p>As we go, you should keep track of what problems we cover each day so that you can anticipate what problems we will cover in the next class. I will post on Moodle a running account of what material we cover each day so that if you do happen to miss class, you will know how far we got in the notes.</p>
+</section>
+<section id="written-homework" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="written-homework"><span class="header-section-number">3.2</span> Written Homework</h2>
+<p>Roughly once per week, I will ask you to hand in write-ups of a few selected problems. The goal of these written assignments is to demonstrate both your understanding of the material as well as your abilty to communicate that understanding in writing. I will provide feedback on your work after which you are welcome to revise and resubmit for further feedback if you wish. You may choose to use some of these problems as evidence of your progress in the course. Guidelines for written work can be found in <strong>?@sec-writing</strong>.</p>
+<p>You are welcome to write your homework assignments by hand, but you might also choose use this opportunity to learn to use <span class="math inline">\(\LaTeX\)</span> which is the typesetting system your professors use to write documents that have lots of math notation. There are several free ways to use <span class="math inline">\(\LaTeX\)</span>, the easiest of which is probably the web-based <a href="http://overleaf.com">Overleaf</a>. Since it’s web-based, there’s nothing to install. Look for the free student version. I can provide templates to help get you started.</p>
+<section id="due-dates-and-late-work" class="level3">
+<h3 class="anchored" data-anchor-id="due-dates-and-late-work">Due Dates and Late Work</h3>
+<p>Due dates for homework (and other assignments) are there to help both you and me to plan our time and stay organized. They’re important, but there is usually a certain amount of flexibility and so if something comes up that’s going to make it difficult (or impossible) to complete an assignment on time, just let me know – preferably by sending me an email letting me know when I can expect to get your assignment.</p>
+<p>Here are some specific guidelines regarding extensions:</p>
+<ul>
+<li>Because homework is designed to help engage with material as we cover it in class, there’s usally not much benefit from putting it off for too long. For this reason, I generally will not accept work that is more than one week late.</li>
+<li>There is no penalty for late work <strong>except</strong> that you will not get timely feedback from me on your work. This could impact your ability to include problems in your portfolio (see below).</li>
+<li>If your work is consistently late, you can expect that I will reach out to see if we can work together to find ways for you to keep up with the work in the course.</li>
+<li>To prevent work from backing up, there are two <strong>hard</strong> deadlines in this course - one is February 27th (the Friday before spring break) and the other is April 24th (the last day of classes). Late work will not be accepeted after those dates, except by prior arrangment.</li>
+</ul>
+</section>
+</section>
+<section id="quizzes" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="quizzes"><span class="header-section-number">3.3</span> Quizzes</h2>
+<p>Throughout the semester, we may have a number of quizzes to help us assess your understanding of the material. While these won’t be graded in the traditional sense, I will provide feedback which you can use to help your learning. You may also choose to include this work in your portfolio.</p>
+</section>
+<section id="proof-portfolio" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="proof-portfolio"><span class="header-section-number">3.4</span> Proof Portfolio</h2>
+<p>As we proceed through the semester, I will ask you to collect samples of your work that exemplify your understanding and engagement with the class content. At mid-semester, I will ask to see a preliminary draft to help ensure you’re making progress. The final version is due on the Friday of the last week of classes.</p>
+<ul>
+<li>Mid-semester check-in due Feb.&nbsp;27th.</li>
+<li>Final portfolio due April 24th.</li>
+</ul>
+<p>Your portfolio should include problems from class presentations or weekly homework that provide evidence of your understanding of the course material as well as your learning over the semester. I’m particularly interested in seeing how you have developed in your learning or have responded to feedback.</p>
+<p>You should include a short reflection for each work element that you include, describing why you chose that particular solution/proof and how you see it demonstrating your learning.</p>
+</section>
+<section id="finals-week" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="finals-week"><span class="header-section-number">3.5</span> Finals Week</h2>
+<p>We not have a traditional final exam, but we will use the scheduled exam time, <strong>Tuesday 1:30-3:30</strong>, for short one-on-one conferences. This will give me a chance to ask you any questions I might have about your portfolio, as well as for to tell me anything else about your learning that isn’t captured in your portfolio.</p>
+<p>Additionally, there will be a short final reflection paper to be completed during finals week which will give you an opportunity to reflect on and synthesize some of the main themes of the course. As part of this, you will also be asked to self-assess your learning over the course of the semester.</p>
+</section>
+</section>
+<section id="grades" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Grades</h1>
+<blockquote class="blockquote">
+<p>Extrinsic motivation, which includes a desire to get better grades, is not only different from, but often undermines, intrinsic motivation, a desire to learn for its own sake.</p>
+<div style="text-align: right">
+<p>– Alfie Kohn, <a href="https://www.alfiekohn.org/article/case-grades/">“The Case Against Grades”</a></p>
+</div>
+</blockquote>
+<p>Grades, as they are traditionally thought of, are inherently imprecise and don’t represent a full picture of your growth and learning over the course of a semester. Worse than that, research suggests that grades undermine the learning process in several ways:</p>
+<ul>
+<li>Grades tend to diminish interest in what you’re learning.</li>
+<li>Grades create a preference for the easiest task. In other words, students tend to do what they need to get a certain grade, but no more.</li>
+<li>Grades tend to reduce the quality of student thinking. The moment we ask “<strong>how</strong> am I doing?” we lose track of <strong>what</strong> we’re doing.</li>
+</ul>
+<p>Although I am required to submit a grade for each student at the end of the semester, I will do what I can to de-emphasize the role of grades so that as much as possible our focus is on learning.</p>
+<section id="collaborative-grading" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="collaborative-grading">Collaborative Grading</h2>
+<p>Rather than giving you marks on individual assignments, I will instead give you extensive feedback on your work. After addressing that feedback, you’re welcome to resubmit for further feedback if you wish. Throughout the semester, I will periodically ask you to reflect carefully on your work and to evaluate your progress. You will collect evidence of your understanding of the course content and based on that evidence, you will be asked to suggest a final course grade. In this way, we will determine your your grade collaboratively.</p>
+<p>The intention here is to help you focus on learning in a way that is more organic, as opposed to simply working as you think you’re expected to. If this process causes more anxiety than it alleviates, please see me at any point to confer about your progress in the course – I’m always happy to talk with you about your learning!</p>
+<p>Here some of the ways that you can demonstrate your understanding of the course material:</p>
+<ul>
+<li>Present correct solutions / valid proofs in class.</li>
+<li>Submit weekly homework (including revisions that incorporate my feedback) that reflects understanding of specific topics.</li>
+<li>When presenting in class, respond thoughtfully to questions.</li>
+<li>When listening to presentations, ask thoughtful questions.</li>
+<li>Provide complete solutions on quizzes.</li>
+<li>Submit a proof portfolio that demonstrates your understanding through:
+<ul>
+<li>Finding and demonstrating connections between ideas.</li>
+<li>Constructing examples and non-examples that demonstrate understanding of definitions.</li>
+<li>Correctly using and explaining the role of axioms and definitions.</li>
+</ul></li>
+</ul>
+</section>
+<section id="qualitative-descriptions-of-grades" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="qualitative-descriptions-of-grades">Qualitative Descriptions of Grades</h2>
+<p>In thinking about grades, I find it helpful to begin with qualitative descriptions of what a particular grade might represent in terms of learning.</p>
+<dl>
+<dt>A</dt>
+<dd>
+<p>This grade generally indicates superior work that demonstrates a deep and thorough understanding of all material such that you could likely apply your understanding to unfamiliar or especially complex problems. Written work is clear, easy to read, and logically correct. You consistently demonstrate your deep understanding using most of the methods described above, including a portfolio.</p>
+</dd>
+<dt>B</dt>
+<dd>
+<p>This grade indicates good work that is eminently satisfactory. You have a solid understanding of most of the topics we’ve coverd, although there may be a few gaps. You would likly be able apply your understanding to some new situations although you might have difficulty with particularly challenging or unfamilar problems. You have demonstrated your understanding using most of the methods described above, including a portfolio.</p>
+</dd>
+<dt>C</dt>
+<dd>
+<p>This grade indicates competent work that demonstrates a basic understanding of course topics, although significant gaps remain. You can handle straightforward problems similar to ones seen throughout the semester, but would likely struggle with novel or more challenging problems. You have demonstrated your understanding using some of the methods described above.</p>
+</dd>
+<dt>D/F</dt>
+<dd>
+<p>These grades represent a fundamental breakdown of expectations. A D represents a meaningful but unsuccessful attempt at earning a C or above. An F represents such a severe lack of engagement, effort, or understanding that there is no evidence of meaningful progress.</p>
+</dd>
+</dl>
+</section>
+<section id="engagement" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="engagement">Engagement</h2>
+<p>Although your course grade should be based on your <strong>understanding</strong> of course content and not on course engagement, in my experience these typically go hand in hand. So while engagement in the course is not itself evidence of understanding, it does usually help us achieve that goal.</p>
+<p>Here are some ways that you can engage with the class:</p>
+<ul>
+<li>Attend class regularly</li>
+<li>Work ahead on new problems and come to class prepared to discuss</li>
+<li>Work to make sense of new definitions or axioms.</li>
+<li>Ask questions - either in class or in drop-in hours.</li>
+<li>Volunteer to present your work. If you’re not comfortable sharing your work with the class, you can always share with me during drop-in hours.</li>
+<li>Actively participate in discussions and group work. This can mean sharing your work but it can also mean asking questions or helping to facilitate the discussion.</li>
+<li>Support your classmates and help them succeed.</li>
+</ul>
+</section>
+<section id="partial-grades" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="partial-grades">Partial Grades</h2>
+<p>In discussing your course grade together, we may opt to add a modifier to your grade to acccount for factors such as your level of engagement with the course.</p>
+</section>
+</section>
+<section id="university-policies-resources" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> University Policies &amp; Resources</h1>
+<section id="code-of-academic-integrity" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="code-of-academic-integrity"><span class="header-section-number">5.1</span> Code of Academic Integrity</h2>
+<p>The University of Portland is a diverse academic community of learners and scholars who are dedicated to freely sharing ideas and engaging in respectful discussion of those ideas to discover truth. Such pursuits require each person, whether student or faculty, to present truthfully our own ideas and give credit to others for the ideas that they generate. Thus, cheating on exams, copying another student’s assignment, including homework, or using the work of others without proper citation are some examples of violating academic integrity.</p>
+<p>Especially for written and oral assignments, students have an ethical responsibility to properly cite the authors of any books, articles, or other sources that they use. Students should expect to submit assignments to Turnitin, a database that ensures assignments are original work of the student submitting. Each discipline has guidelines for how to give appropriate credit, and instructors will communicate the specific guidelines for their discipline. The Clark Library also maintains a webpage that provides citation guidelines at <a href="https://libguides.up.edu/cite">libguides.up.edu/cite</a>.</p>
+<p>The misuse of AI to shortcut course learning outcomes will be treated as a violation of academic integrity comparable to plagiarism or cheating. Faculty are responsible for including a written “Course AI Policy” in their syllabi that clearly states what they consider appropriate and inappropriate uses of AI in the context of their courses. Students are responsible for using AI in ways that do not detract from the established learning outcomes of the course. All members of the scholarly community are responsible for demonstrating sound judgment in discerning when and how to utilize AI in their work, upholding standards of citation, originality, and integrity.</p>
+<p>For more information, please see the <a href="http://up.smartcatalogiq.com/en/2022-2023/bulletin/University-Academic-Regulations/I-Code-of-Academic-Integrity/Guidelines-for-Implementation-of-the-Universitys-Code-of-Academic-Integrity">Guidelines for Implementation of the University’s Code of Academic Integrity</a> in the University Bulletin.</p>
+</section>
+<section id="assessment-disclosure" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="assessment-disclosure"><span class="header-section-number">5.2</span> Assessment Disclosure</h2>
+<p>Student work products for this course may be used by the University for educational quality assurance purposes. For reasons of confidentiality, such examples will not include student names.</p>
+</section>
+<section id="accessibility" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="accessibility"><span class="header-section-number">5.3</span> Accessibility</h2>
+<p>The University of Portland strives to make its courses and services fully accessible to all students. Students are encouraged to discuss with their instructors what might be most helpful in enabling them to meet the learning goals of the course. Students who experience a disability are also encouraged to use the services of the Office for Accessible Education Services (AES), located in the Shepard Academic Resource Center (503-943-8985).</p>
+<p><strong>If you have an AES Accommodation Plan</strong>, you should meet with your instructor to discuss how to implement your plan in this class. Requests for alternate location for exams and/or extended exam time should, where possible, be made two weeks in advance of an exam, and must be made at least one week in advance of an exam. Also, if applicable, you should meet with your instructor to discuss emergency medical information or how best to ensure your safe evacuation from the building in case of fire or other emergency. All information that students provide regarding disability or accommodation is confidential. All students are responsible for completing the required coursework and are held to the same evaluation standards specified in the course syllabus.</p>
+</section>
+<section id="mental-health" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="mental-health"><span class="header-section-number">5.4</span> Mental Health</h2>
+<p>Anyone can experience problems with their mental health that interfere with academic experiences and negatively impact daily life. If you or someone you know experiences mental health challenges at UP, please contact the <a href="https://www.up.edu/counseling/">University of Portland Counseling Center</a> in the upper level of Orrico Hall (down the hill from Franz Hall and near Mehling Hall) at 503-943-7134 or <a href="mailto:hcc@up.edu">hcc@up.edu</a>. Their services are free and confidential. In addition, mental health consultation and support is available through the Pilot Helpline by calling 503-943-7134 and pressing 3. The University of Portland Campus Safety Department (503-943-4444) also has personnel trained to respond sensitively to mental health emergencies at all hours. Remember that getting help is a smart and courageous thing to do – for yourself, for those you care about, and for those who care about you. For more information on health and wellness resources at UP go to <a href="https://www.linktr.ee/wellnessUP">www.linktr.ee/wellnessUP</a>.</p>
+</section>
+<section id="non-violence" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="non-violence"><span class="header-section-number">5.5</span> Non-Violence</h2>
+<p>The University of Portland is committed to fostering a safe and respectful community free from all forms of violence. Violence of any kind, and in particular acts of power- based personal violence, are inconsistent with our mission. Together, all UP community members must take a stand against violence. Learn more about what interpersonal violence looks like, campus and community resources, UP’s prevention strategy, and what we as individuals can do to assist on the <a href="https://www.up.edu/greendot">Green Dot website</a>. Further information and reporting options may be found on the <a href="htts://www.up.edu/titleix">Title IX website</a>.</p>
+</section>
+<section id="ethics-of-information" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="ethics-of-information"><span class="header-section-number">5.6</span> Ethics of Information</h2>
+<p>The University of Portland is a community dedicated to the investigation and discovery of processes for thinking ethically and encouraging the development of ethical reasoning in the formation of the whole person. Using information ethically, as an element in open and honest scholarly endeavors, involves moral reasoning to determine the right way to access, create, distribute, and employ information, including: considerations of intellectual property rights, fair use, information bias, censorship, and privacy. More information can be found in the Clark Library’s guide to the <a href="https://libguides.up.edu/ethicaluse">Ethical Use of Information</a>.</p>
+</section>
+<section id="final-exam-policy" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="final-exam-policy"><span class="header-section-number">5.7</span> Final Exam Policy</h2>
+<p>The University’s Academic Regulation regarding final examinations states that these may only be given during the scheduled times published by the registrar [noted above for the course]. During the week prior to final examination week, no examinations may be given, except in laboratory practica. Regardless of whether a final exam is given, all classes must meet during final examination week in accordance with the final exam schedule.</p>
+</section>
+<section id="the-learning-commons" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="the-learning-commons"><span class="header-section-number">5.8</span> The Learning Commons</h2>
+<p>Students may receive academic assistance through Learning Commons tutoring services and workshops. The Co-Pilot peer tutoring program provides students with opportunities to work with other students to get help in writing, math, group projects, and many other courses. Schedule an appointment to meet with a Co-Pilot (tutor) by visiting the <a href="https://www.up.edu/learningcommons">Learning Commons website</a>. Students can also meet with a Co-Pilot during drop-in hours. Check the Learning Commons website or stop by the Learning Commons in BC 163 to learn more about their services. Co-Pilots are a wonderful support along your academic journey.</p>
+</section>
+<section id="withdrawal-procedures" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="withdrawal-procedures"><span class="header-section-number">5.9</span> Withdrawal Procedures</h2>
+<p>It is the student’s responsibility to drop the course if he or she is no longer planning on attending the course or filling the other course requirements. In order to drop, the student must use and Add/Drop form available at the Registration Office. If a student does not properly withdraw from a course, he or she may receive an <strong>F</strong> for the course. A properly withdrawn student will receive a <strong>W</strong>. The last day to withdraw is <strong>Monday, April 13.</strong></p>
+</section>
+<section id="incompletes" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="incompletes"><span class="header-section-number">5.10</span> Incompletes</h2>
+<p>An incomplete (<strong>I</strong>) will only be considered when the quality of a student’s work is satisfactory (C- or better), but for some essential reason the course has not been completed by the student. An (I) is reserved for emergency situations only. To request an incomplete, the student must submit a typed, signed and dated letter stating the reason(s) why an incomplete is appropriate. The letter should also contain the conditions for the completion of work. Acceptance of the request shall be at the discretion of the instructor, Department Chair, and/or Dean of the College of Arts &amp; Sciences.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
