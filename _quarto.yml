@@ -1,5 +1,6 @@
 project:
   title: "mth401-s26"
+  output-dir: docs
 
 editor: visual
 
