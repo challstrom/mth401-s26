@@ -10,7 +10,6 @@ subtitle: "Spring 2026, University of Portland"
 }
 </style>
 ```
-
 # Welcome! {.unnumbered}
 
 Before we get into the details of the course, I want to share with you a few thoughts about my general approach to teaching and learning. My main goal as the professor in this course is to help you succeed in not just learning the material but in growing as a learner. Learning takes effort, a willingness to try something that may not work, and the ability to use feedback to refine your understanding. My job is to foster an environment in which each and every one of you are supported in these aspects.
@@ -64,7 +63,7 @@ I will do my best to post on Moodle a short summary of what we do in class, so i
 Using AI in this class fundamentally undermines our learning goals and **should not be used in any way**.
 :::
 
-:::::: columns
+::: columns
 ::: {.column width="45%"}
 Here's the thing -- your goal in this class is **not** to perform calculations, to work through examples, or even to get the right answer. Yes, we will do those things but they're all in service of the **actual goal** which is to **think** and to **communicate** mathematically.
 
@@ -82,7 +81,7 @@ My role is to help guide your thinking and to help you think more like an expert
 ::: {.column width="50%"}
 ![](./images/sousanis.jpg)
 :::
-::::::
+:::
 
 Bottom line: I do not see any practical, helpful, or ethical way to use Gen AI and LLMs to assist you in achieving this goal.
 
@@ -131,8 +130,7 @@ As we go, you should keep track of what problems we cover each day so that you c
 
 Roughly once per week, I will ask you to hand in write-ups of a few selected problems. The goal of these written assignments is to demonstrate both your understanding of the material as well as your abilty to communicate that understanding in writing. I will provide feedback on your work after which you are welcome to revise and resubmit for further feedback if you wish. You may choose to use some of these problems as evidence of your progress in the course. Guidelines for written work can be found in [Section @sec-writing].
 
-You are welcome to write your homework assignments by hand, but you might also choose use this opportunity to learn to use $\LaTeX$ which is the typesetting system your professors use to write documents that have lots of math notation. There are several free ways to use $\LaTeX$, the easiest of which is probably the web-based [Overleaf](http://overleaf.com). Since it's web-based, there's nothing to install. Look for the free student version.  I can provide templates to help get you started.
-
+You are welcome to write your homework assignments by hand, but you might also choose use this opportunity to learn to use $\LaTeX$ which is the typesetting system your professors use to write documents that have lots of math notation. There are several free ways to use $\LaTeX$, the easiest of which is probably the web-based [Overleaf](http://overleaf.com). Since it's web-based, there's nothing to install. Look for the free student version. I can provide templates to help get you started.
 
 ### Due Dates and Late Work
 
@@ -140,29 +138,29 @@ Due dates for homework (and other assignments) are there to help both you and me
 
 Here are some specific guidelines regarding extensions:
 
--  Because homework is designed to help engage with material as we cover it in class, there's usally not much benefit from putting it off for too long.  For this reason, I generally will not accept work that is more than one week late.
+-   Because homework is designed to help engage with material as we cover it in class, there's usally not much benefit from putting it off for too long. For this reason, I generally will not accept work that is more than one week late.
 -   There is no penalty for late work **except** that you will not get timely feedback from me on your work. This could impact your ability to include problems in your portfolio (see below).
 -   If your work is consistently late, you can expect that I will reach out to see if we can work together to find ways for you to keep up with the work in the course.
 -   To prevent work from backing up, there are two **hard** deadlines in this course - one is February 27th (the Friday before spring break) and the other is April 24th (the last day of classes). Late work will not be accepeted after those dates, except by prior arrangment.
 
-
 ## Quizzes
 
-Throughout the semester, we may have a number of quizzes to help us assess your understanding of the material. While these won't be graded in the traditional sense, I will provide feedback which you can use to help your learning.  You may also choose to include this work in your portfolio.
+Throughout the semester, we may have a number of quizzes to help us assess your understanding of the material. While these won't be graded in the traditional sense, I will provide feedback which you can use to help your learning. You may also choose to include this work in your portfolio.
 
 ## Proof Portfolio
 
-As we proceed through the semester, I will ask you to collect samples of your work that exemplify your understanding and engagement with the class content. At mid-semester, I will ask to see a preliminary draft to help ensure you're making progress.  The final version is due on the Friday of the last week of classes.
+As we proceed through the semester, I will ask you to collect samples of your work that exemplify your understanding and engagement with the class content. At mid-semester, I will ask to see a preliminary draft to help ensure you're making progress. The final version is due on the Friday of the last week of classes.
 
-  - Mid-semester check-in due Feb. 27th.
-  - Final portfolio due April 24th.
+-   Mid-semester check-in due Feb. 27th.
+-   Final portfolio due April 24th.
 
-Your portfolio should include problems from class presentations or weekly homework that provide evidence of your understanding of the course material as well as your learning over the semester.  I'm particularly interested in seeing how you have developed in your learning or have responded to feedback.
+Your portfolio should include problems from class presentations or weekly homework that provide evidence of your understanding of the course material as well as your learning over the semester. I'm particularly interested in seeing how you have developed in your learning or have responded to feedback.
 
 You should include a short reflection for each work element that you include, describing why you chose that particular solution/proof and how you see it demonstrating your learning.
 
 ## Finals Week
-We not have a traditional final exam, but we will use the scheduled exam time, **Tuesday 1:30-3:30**, for short one-on-one conferences.  This will give me a chance to ask you any questions I might have about your portfolio, as well as for to tell me anything else about your learning that isn't captured in your portfolio.  
+
+We not have a traditional final exam, but we will use the scheduled exam time, **Tuesday 1:30-3:30**, for short one-on-one conferences. This will give me a chance to ask you any questions I might have about your portfolio, as well as for to tell me anything else about your learning that isn't captured in your portfolio.
 
 Additionally, there will be a short final reflection paper to be completed during finals week which will give you an opportunity to reflect on and synthesize some of the main themes of the course. As part of this, you will also be asked to self-assess your learning over the course of the semester.
 
@@ -206,15 +204,15 @@ In thinking about grades, I find it helpful to begin with qualitative descriptio
 
 A
 
-:   This grade generally indicates superior work that demonstrates a deep and thorough understanding of all material such that you could likely apply your understanding to unfamiliar or especially complex problems.   Written work is clear, easy to read, and logically correct.  You consistently demonstrate your deep understanding using most of the methods described above, including a portfolio.
+:   This grade generally indicates superior work that demonstrates a deep and thorough understanding of all material such that you could likely apply your understanding to unfamiliar or especially complex problems. Written work is clear, easy to read, and logically correct. You consistently demonstrate your deep understanding using most of the methods described above, including a portfolio.
 
 B
 
-:   This grade indicates good work that is eminently satisfactory. You have a solid understanding of most of the topics we've coverd, although there may be a few gaps.  You would likly be able apply your understanding to some new situations although you might have difficulty with particularly challenging or unfamilar problems.  You have demonstrated your understanding using most of the methods described above, including a portfolio.
+:   This grade indicates good work that is eminently satisfactory. You have a solid understanding of most of the topics we've coverd, although there may be a few gaps. You would likly be able apply your understanding to some new situations although you might have difficulty with particularly challenging or unfamilar problems. You have demonstrated your understanding using most of the methods described above, including a portfolio.
 
 C
 
-:   This grade indicates competent work that demonstrates a basic understanding of course topics, although significant gaps remain.  You can handle straightforward problems similar to ones seen throughout the semester, but would likely struggle with novel or more challenging problems.  You have demonstrated your understanding using some of the methods described above.
+:   This grade indicates competent work that demonstrates a basic understanding of course topics, although significant gaps remain. You can handle straightforward problems similar to ones seen throughout the semester, but would likely struggle with novel or more challenging problems. You have demonstrated your understanding using some of the methods described above.
 
 D/F
 
@@ -235,19 +233,18 @@ Here are some ways that you can engage with the class:
 -   Support your classmates and help them succeed.
 
 ## Partial Grades {.unnumbered}
+
 In discussing your course grade together, we may opt to add a modifier to your grade to acccount for factors such as your level of engagement with the course.
-
-
 
 # University Policies & Resources
 
 ## Code of Academic Integrity
 
-The University of Portland is a diverse academic community of learners and scholars who are dedicated to freely sharing ideas and engaging in respectful discussion of those ideas to discover truth. Such pursuits require each person, whether student or faculty, to present truthfully our own ideas and give credit to others for the ideas that they generate. Thus, cheating on exams, copying another student’s assignment, including homework, or using the work of others without proper citation are some examples of violating academic integrity.
+The University of Portland is a diverse academic community of learners and scholars who are dedicated to freely sharing ideas and engaging in respectful discussion of those ideas to discover truth. Such pursuits require each person, whether student or faculty, to present truthfully our own ideas and give credit to others for the ideas that they generate. Thus, cheating on exams, copying another student's assignment, including homework, or using the work of others without proper citation are some examples of violating academic integrity.
 
 Especially for written and oral assignments, students have an ethical responsibility to properly cite the authors of any books, articles, or other sources that they use. Students should expect to submit assignments to Turnitin, a database that ensures assignments are original work of the student submitting. Each discipline has guidelines for how to give appropriate credit, and instructors will communicate the specific guidelines for their discipline. The Clark Library also maintains a webpage that provides citation guidelines at [libguides.up.edu/cite](https://libguides.up.edu/cite).
 
-The misuse of AI to shortcut course learning outcomes will be treated as a violation of academic integrity comparable to plagiarism or cheating. Faculty are responsible for including a written “Course AI Policy” in their syllabi that clearly states what they consider appropriate and inappropriate uses of AI in the context of their courses. Students are responsible for using AI in ways that do not detract from the established learning outcomes of the course. All members of the scholarly community are responsible for demonstrating sound judgment in discerning when and how to utilize AI in their work, upholding standards of citation, originality, and integrity.
+The misuse of AI to shortcut course learning outcomes will be treated as a violation of academic integrity comparable to plagiarism or cheating. Faculty are responsible for including a written "Course AI Policy" in their syllabi that clearly states what they consider appropriate and inappropriate uses of AI in the context of their courses. Students are responsible for using AI in ways that do not detract from the established learning outcomes of the course. All members of the scholarly community are responsible for demonstrating sound judgment in discerning when and how to utilize AI in their work, upholding standards of citation, originality, and integrity.
 
 For more information, please see the [Guidelines for Implementation of the University's Code of Academic Integrity](http://up.smartcatalogiq.com/en/2022-2023/bulletin/University-Academic-Regulations/I-Code-of-Academic-Integrity/Guidelines-for-Implementation-of-the-Universitys-Code-of-Academic-Integrity) in the University Bulletin.
 
@@ -288,4 +285,3 @@ It is the student's responsibility to drop the course if he or she is no longer 
 ## Incompletes
 
 An incomplete (**I**) will only be considered when the quality of a student's work is satisfactory (C- or better), but for some essential reason the course has not been completed by the student. An (I) is reserved for emergency situations only. To request an incomplete, the student must submit a typed, signed and dated letter stating the reason(s) why an incomplete is appropriate. The letter should also contain the conditions for the completion of work. Acceptance of the request shall be at the discretion of the instructor, Department Chair, and/or Dean of the College of Arts & Sciences.
-
